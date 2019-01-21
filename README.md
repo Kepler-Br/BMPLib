@@ -1,19 +1,25 @@
-# BMPLib
-Deadly simple lib (and through not very potent) for reading and saving 24 bit BMP v4 images.
+# BMP library
 
-Features:
-* Loading images;
-* Saving images;
-* Editing every pixel of the image;
-* Creating blank images;
-* loder and saver is separate classes.
+Simple library for loading 24 bit color BMP files with v4 header.
 
-Example:
-```c++
-using namespace BmpLib;
-BmpLoader reader;
-Image exampleImage = reader.load("example.bmp");
-exampleImage.setPixel(0, 0, {0, 0, 0});
-BmpWriter writer;
-writer.write(exampleImage, "processedExample.bmp");
+To create makefile type in the project directory:  
+`qmake ./BmpLib.pro`
+
+Lib provides 3 classes for dealing with BMP files:
+- BmpLoader
+- BmpWriter
+- Image  
+
+BmpLoader provides simple interface for loading image. You should instance this class to work with.  
 ```
+BmpLoader loader;
+Image img = loader.load("image.bmp");
+```  
+BmpWriter provides simple interface for loading image. You should instance this class to work with. 
+```
+BmpLoader writer; 
+Image img = loader.write(img, "image.bmp");
+```
+Image provides simple interface for manipulating image's pixel color.  
+**Expect bugs!**
+Should compile under GNU/Linux but Windows compatibility is not guaranteed.  
