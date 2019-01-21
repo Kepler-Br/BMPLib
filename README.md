@@ -9,11 +9,11 @@ Features:
 * loder and saver is separate classes.
 
 Example:
-`cpp
+```c++
 using namespace BmpLib;
 BmpLoader reader;
 Image exampleImage = reader.load("example.bmp");
 exampleImage.setPixel(0, 0, {0, 0, 0});
 BmpWriter writer;
 writer.write(exampleImage, "processedExample.bmp");
-`
+```
